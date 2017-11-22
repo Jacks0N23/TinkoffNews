@@ -87,9 +87,10 @@ public class NetworkNewsDataStore implements NewsListDataStore {
                             if (article == null) {
                                 return null;
                             }
-                            article.setContent(content);
+                            article.setContent(newsDto.getPayload().getContent());
                             mNewsDatabase.newsDao().update(article);
                             Log.e(TAG, "getArticle: ");
+                            article.setContent(content);
                             return article;
                         }
                         return null;

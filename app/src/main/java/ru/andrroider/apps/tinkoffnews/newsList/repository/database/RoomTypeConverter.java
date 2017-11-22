@@ -8,8 +8,6 @@ import android.arch.persistence.room.TypeConverter;
 
 public class RoomTypeConverter {
 
-    //сохранять CharSequence не получается(потому что походу это SpannedString и все спаны теряются
-    // при toString()), но зато я хотя бы попробовал конвертеры
     @TypeConverter
     public static String ToString(CharSequence value) {
         return value != null ? value.toString() : null;
